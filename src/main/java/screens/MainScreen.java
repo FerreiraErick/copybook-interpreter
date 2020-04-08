@@ -5,10 +5,16 @@
  */
 package screens;
 
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.HeadlessException;
+import java.awt.Point;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.Border;
 
 
 /**
@@ -28,14 +34,26 @@ public class MainScreen extends JFrame
     private void screenStartDefinition(){
         this.setSize(WIDTH, HEIGHT);
         this.setResizable(false);
-        this.setVisible(true);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        
+        this.rightSidePane();
+        
+        
+        
+        this.setVisible(true);
     }
     
     private void rightSidePane(){
         JPanel rightPane = new JPanel();
+//        rightPane.setSize(200, HEIGHT);
+        rightPane.setBounds(240, 840, 200, 840);
+        Border border = BorderFactory.createLineBorder(Color.BLACK);
+        
+        rightPane.setBorder(border);
         this.add(rightPane);
         
+        JButton botao1 = this.buttonDefinitio(new Dimension(50, 20), new Point( 100, 100), "Botao1");
+        rightPane.add(botao1);
         
     } 
     
@@ -43,9 +61,10 @@ public class MainScreen extends JFrame
         
     }
     
-    private JButton buttonDefinitio(Integer width, Integer height, String label){
+    private JButton buttonDefinitio(Dimension dimension,Point point, String label){
         JButton button = new JButton(label);
-        button.setSize(width, height);
+        button.setSize(dimension);
+        button.setLocation(point);
         
         return button;
     }
