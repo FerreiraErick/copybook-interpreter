@@ -3,19 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.copybook.main;
+package screens.mainscreen.leftpane;
 
-import screens.mainscreen.MainScreen;
+import javax.swing.JPanel;
 
 /**
  *
  * @author erick
  */
-public class Main
-{
-    public static void main(String...args)
-    {
-        MainScreen mainScreen = new MainScreen();
-
-    }
+public class LeftPane extends JPanel {
+    
 }
